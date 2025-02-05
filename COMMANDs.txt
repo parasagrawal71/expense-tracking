@@ -9,6 +9,8 @@ From the root directory
 # STEPS to add a nest app inside apps/api
 ---------------------------------------------------------------
 > pnpx @nestjs/cli new apps/api/auth-api
+> cd apps/api/auth-api
+> rm -rf .git .gitignore .prettierrc eslint.config.mjs
 > pnpm --filter auth-api start:dev (-F  in short)
 > pnpm -F auth-api i
     > pnpm -F auth-api i @packages/common
