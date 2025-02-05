@@ -6,7 +6,7 @@ From the root directory
 > pnpm lint (Script from main package.json)
 > pnpm format (Script from main package.json)
 
-# STEPS to add a nest app inside apps
+# STEPS to add a nest app inside apps/api
 ---------------------------------------------------------------
 > pnpx @nestjs/cli new apps/api/auth-api
 > pnpm --filter auth-api start:dev (-F  in short)
@@ -60,3 +60,10 @@ From root directory
 > pnpm add ./packages/<package_name> --workspace-root
 > Usage: import { Logger } from '@packages/common';
 > This will also work -> pnpm --filter @packages/<package_name> build
+
+
+# STEPS to add a frontend app inside apps/ui
+---------------------------------------------------------------
+> pnpm create vite apps/ui/webapp
+> pnpm i
+> pnpm -F webapp dev
