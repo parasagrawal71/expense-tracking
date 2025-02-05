@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "prepare": "husky"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -24,5 +23,8 @@
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.23.0"
+  },
+  "dependencies": {
+    "@packages/common": "link:packages/common"
   }
 }

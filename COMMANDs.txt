@@ -1,6 +1,62 @@
-COMMANDs
----
-In the root directory
-> pnpm install or pnpm i
+PNPM COMMANDS
+---------------------------------------------------------------
+From the root directory
+> pnpm i
+> pnpm -r build
 > pnpm lint (Script from main package.json)
 > pnpm format (Script from main package.json)
+
+# STEPS to add a nest app inside apps
+---------------------------------------------------------------
+> pnpx @nestjs/cli new apps/api/auth-api
+> pnpm --filter auth-api start:dev (-F  in short)
+> pnpm -F auth-api i
+    > pnpm -F auth-api i @packages/common
+> pnpm -F auth-api build
+> pnpm -F auth-api... build
+> pnpm -F auth-api format
+> pnpm -F auth-api lint
+> pnpm -F auth-api test
+
+
+OTHER COMMANDS
+---------------------------------------------------------------
+# Recursively remove node_modules
+> find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+
+
+STEPS to add a new service inside the packages
+---------------------------------------------------------------
+> mkdir -p packages/<package_name>
+> cd packages/<package_name>
+> pnpm init
+> Update package.json
+    > Update name to @packages/<package_name>
+    > Add following  
+        "main": "dist/index.js",
+        "types": "dist/index.d.ts",
+        "scripts": {
+            "build": "tsc"
+        },
+> pnpm add --filter <package_name> typescript 
+> Add tsconfig.json
+    {
+        "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "allowJs": true,
+        "declaration": true,
+        "outDir": "./dist",
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+        },
+        "include": ["src"]
+    }
+From root directory
+> pnpm --filter <package_name> build
+> pnpm add ./packages/<package_name> --workspace-root
+> Usage: import { Logger } from '@packages/common';
+> This will also work -> pnpm --filter @packages/<package_name> build
