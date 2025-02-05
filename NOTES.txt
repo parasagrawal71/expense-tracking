@@ -1,0 +1,3 @@
+> Create a monorepo using PNPM workspace - https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
+
+> Monorepo using pnpm workspaces - https://fazalerabbi.medium.com/monorepo-using-pnpm-workspaces-cb23ed332127

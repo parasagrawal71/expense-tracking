@@ -1,0 +1,6 @@
+COMMANDs
+---
+In the root directory
+> pnpm install or pnpm i
+> pnpm lint (Script from main package.json)
+> pnpm format (Script from main package.json)
