@@ -1,3 +1,6 @@
+Referred the following two blogs:
 > Create a monorepo using PNPM workspace - https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
-
 > Monorepo using pnpm workspaces - https://fazalerabbi.medium.com/monorepo-using-pnpm-workspaces-cb23ed332127
+
+Yet to try:
+> How to start monorepo with NextJS + NestJS using pnpm workspaces - https://gist.github.com/leandroluk/ead95513d3666326d364248ae98eb2e3
