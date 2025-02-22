@@ -9,6 +9,8 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { AppResolver } from './app.resolver';
 import { ExpenseEntity } from './expense/entity/expense.entity';
 import { ExpenseDto } from './expense/dto/expense.dto';
+import { CreateExpenseDto } from './expense/dto/create-expense.dto';
+import { UpdateExpenseDto } from './expense/dto/update-expense.dto';
 
 @Module({
   imports: [
@@ -35,9 +37,11 @@ import { ExpenseDto } from './expense/dto/expense.dto';
         {
           DTOClass: ExpenseDto,
           EntityClass: ExpenseEntity,
+          CreateDTOClass: CreateExpenseDto,
+          UpdateDTOClass: UpdateExpenseDto,
           enableTotalCount: true,
-          create: { disabled: true },
-          update: { disabled: true },
+          create: { disabled: false },
+          update: { disabled: false },
           delete: { disabled: true },
         },
       ],

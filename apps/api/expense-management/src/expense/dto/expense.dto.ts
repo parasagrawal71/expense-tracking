@@ -25,7 +25,7 @@ export class ExpenseDto {
   expenseDate: Date;
 
   @FilterableField()
-  userId: string;
+  userId: number;
 
   @Field()
   created: Date;

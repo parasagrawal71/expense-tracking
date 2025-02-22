@@ -31,8 +31,8 @@ export class ExpenseEntity {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   expenseDate: Date;
 
-  @Column({ type: 'uuid' })
-  userId: string;
+  @Column({ type: 'numeric' })
+  userId: number;
 
   @CreateDateColumn()
   created: Date;
