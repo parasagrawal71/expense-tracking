@@ -69,3 +69,18 @@ From root directory
 > pnpm create vite apps/ui/webapp
 > pnpm i
 > pnpm -F webapp dev
+
+
+# STEPS to create a resource
+---------------------------------------------------------------
+From apps/api/<package_name>:
+> pnpx @nestjs/cli g res user
+
+
+# Migration scripts in auth-api
+---------------------------------------------------------------
+> pnpm -F auth-api migration:generate
+> pnpm -F auth-api migration:run
+> pnpm -F auth-api migration:revert
+> pnpm -F auth-api migration:create
+Note: Script from package.json

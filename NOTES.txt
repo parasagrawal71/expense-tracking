@@ -1,6 +1,21 @@
-Referred the following two blogs:
-> Create a monorepo using PNPM workspace - https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
-> Monorepo using pnpm workspaces - https://fazalerabbi.medium.com/monorepo-using-pnpm-workspaces-cb23ed332127
+------------------------------------------------------
+Referred the following two blogs for monorepo setup:
+------------------------------------------------------
+> Create a monorepo using PNPM workspace
+https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
+> Monorepo using pnpm workspaces
+https://fazalerabbi.medium.com/monorepo-using-pnpm-workspaces-cb23ed332127
 
 Yet to try:
-> How to start monorepo with NextJS + NestJS using pnpm workspaces - https://gist.github.com/leandroluk/ead95513d3666326d364248ae98eb2e3
+> How to start monorepo with NextJS + NestJS using pnpm workspaces
+https://gist.github.com/leandroluk/ead95513d3666326d364248ae98eb2e3
+
+
+------------------------------------------------------
+Database Setup
+------------------------------------------------------
+> NestJS and PostgreSQL: A CRUD Tutorial
+https://medium.com/simform-engineering/nestjs-and-postgresql-a-crud-tutorial-32aa78778752
+> Auto Migration Scripts in TypeORM
+https://typeorm.io/migrations - WORKING ✅
+
