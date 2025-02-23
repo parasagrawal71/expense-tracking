@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DBConn } from './db.conn';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { LoggerModule } from '@packages/common';
+import { DBConn } from './db.conn';
 import { AppResolver } from './app.resolver';
 import { ExpenseModule } from './expense/expense.module';
 
