@@ -7,7 +7,8 @@ import {
 } from '@ptc-org/nestjs-query-graphql';
 import { CommentDto } from '../../comment/dto/comment.dto';
 
-@UnPagedRelation('comments', () => CommentDto)
+// @UnPagedRelation('comments', () => CommentDto)
+@UnPagedRelation('commentList', () => CommentDto)
 @ObjectType('ExpenseDto')
 export class ExpenseDto {
   @Field()
