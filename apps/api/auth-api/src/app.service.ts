@@ -3,8 +3,10 @@ import { Logger } from '@packages/common';
 
 @Injectable()
 export class AppService {
+  constructor(private readonly logger: Logger) {}
+
   getHello(): string {
-    Logger('Hello World!');
+    this.logger.info('Hello World!');
 
     return 'Hello World!';
   }

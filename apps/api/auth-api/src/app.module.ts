@@ -4,9 +4,11 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { DBConn } from './db.conn';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LoggerModule } from '@packages/common';
 
 @Module({
   imports: [
+    LoggerModule.forRoot({ excludedRoutes: [] }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: DBConn.host,

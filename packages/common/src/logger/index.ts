@@ -1,3 +1,2 @@
-export const Logger = (message: string) => {
-  console.log(`${'Logger - ' + new Date().toISOString() + ': ' + message}`);
-};
+export { PinoLogger as Logger, Logger as LoggerMiddleware } from 'nestjs-pino';
+export { AppLoggerModule as LoggerModule } from './logger.module';
