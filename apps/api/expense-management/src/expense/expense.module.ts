@@ -18,6 +18,9 @@ import { UpdateExpenseDto } from './dto/update-expense.dto';
           CreateDTOClass: CreateExpenseDto,
           UpdateDTOClass: UpdateExpenseDto,
           enableTotalCount: true,
+          read: {
+            maxResultsSize: 100,
+          },
           create: { disabled: false },
           update: { disabled: false },
           delete: { disabled: true },

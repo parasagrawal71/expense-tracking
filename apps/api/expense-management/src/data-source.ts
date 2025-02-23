@@ -1,15 +1,4 @@
-import { DataSource } from 'typeorm';
+import { getDataSource } from '@packages/db';
 import { DBConn } from './db.conn';
 
-export default new DataSource({
-  type: 'postgres',
-  host: DBConn.host,
-  port: DBConn.port,
-  username: DBConn.username,
-  password: DBConn.password,
-  database: DBConn.database,
-  entities: ['dist/**/*.entity{.ts,.js}'],
-  synchronize: false,
-  migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
-  migrationsTableName: 'migrations',
-});
+export default getDataSource(DBConn);
