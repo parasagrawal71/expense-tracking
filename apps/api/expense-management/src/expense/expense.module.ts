@@ -7,12 +7,17 @@ import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
 import { ExpenseRelationalQueryService } from './service/expense-relational-query.service';
 import { CommentQueryService } from './service/comment-query.service';
+import { UserQueryService } from './service/user-query.service';
 
 @Module({
   imports: [
     NestjsQueryGraphQLModule.forFeature({
       imports: [NestjsQueryTypeOrmModule.forFeature([ExpenseEntity])],
-      services: [ExpenseRelationalQueryService, CommentQueryService],
+      services: [
+        ExpenseRelationalQueryService,
+        CommentQueryService,
+        UserQueryService,
+      ],
       resolvers: [
         {
           DTOClass: ExpenseDto,

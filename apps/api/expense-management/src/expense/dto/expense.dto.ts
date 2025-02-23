@@ -3,12 +3,19 @@ import { IsEnum } from 'class-validator';
 import { ExpenseCategory } from '../constants/expense-category.enum';
 import {
   FilterableField,
+  Relation,
   UnPagedRelation,
 } from '@ptc-org/nestjs-query-graphql';
 import { CommentDto } from '../../comment/dto/comment.dto';
+import { UserDto } from './user.dto';
 
 // @UnPagedRelation('comments', () => CommentDto)
 @UnPagedRelation('commentList', () => CommentDto)
+@Relation('user', () => UserDto, {
+  nullable: true,
+  update: { enabled: false },
+  remove: { enabled: false },
+})
 @ObjectType('ExpenseDto')
 export class ExpenseDto {
   @Field()
