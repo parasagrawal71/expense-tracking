@@ -4,8 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 import { ExpenseCategory } from '../constants/expense-category.enum';
+import { CommentEntity } from 'src/comment/entity/comment.entity';
 
 @Entity('expenses')
 export class ExpenseEntity {
@@ -39,4 +41,9 @@ export class ExpenseEntity {
 
   @UpdateDateColumn()
   updated: Date;
+
+  @OneToMany(() => CommentEntity, (comment) => comment.expense, {
+    onDelete: 'CASCADE',
+  })
+  comments: CommentEntity[];
 }

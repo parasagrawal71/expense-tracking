@@ -1,22 +1,22 @@
 import { Module } from '@nestjs/common';
 import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
 import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
-import { ExpenseEntity } from './entity/expense.entity';
-import { ExpenseDto } from './dto/expense.dto';
-import { CreateExpenseDto } from './dto/create-expense.dto';
-import { UpdateExpenseDto } from './dto/update-expense.dto';
+import { CommentDto } from './dto/comment.dto';
+import { CommentEntity } from './entity/comment.entity';
+import { CreateCommentDto } from './dto/create-comment.dto';
+import { UpdateCommentDto } from './dto/update-comment.dto';
 
 @Module({
   imports: [
     NestjsQueryGraphQLModule.forFeature({
-      imports: [NestjsQueryTypeOrmModule.forFeature([ExpenseEntity])],
+      imports: [NestjsQueryTypeOrmModule.forFeature([CommentEntity])],
       services: [],
       resolvers: [
         {
-          DTOClass: ExpenseDto,
-          EntityClass: ExpenseEntity,
-          CreateDTOClass: CreateExpenseDto,
-          UpdateDTOClass: UpdateExpenseDto,
+          DTOClass: CommentDto,
+          EntityClass: CommentEntity,
+          CreateDTOClass: CreateCommentDto,
+          UpdateDTOClass: UpdateCommentDto,
           enableTotalCount: true,
           read: {
             maxResultsSize: 100,
@@ -30,4 +30,4 @@ import { UpdateExpenseDto } from './dto/update-expense.dto';
   ],
   providers: [],
 })
-export class ExpenseModule {}
+export class CommentModule {}

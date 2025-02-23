@@ -1,8 +1,13 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { IsEnum } from 'class-validator';
 import { ExpenseCategory } from '../constants/expense-category.enum';
-import { FilterableField } from '@ptc-org/nestjs-query-graphql';
+import {
+  FilterableField,
+  UnPagedRelation,
+} from '@ptc-org/nestjs-query-graphql';
+import { CommentDto } from '../../comment/dto/comment.dto';
 
+@UnPagedRelation('comments', () => CommentDto)
 @ObjectType('ExpenseDto')
 export class ExpenseDto {
   @Field()

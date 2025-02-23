@@ -7,6 +7,7 @@ import { DBConn } from './db.conn';
 import { AppResolver } from './app.resolver';
 import { ExpenseModule } from './expense/expense.module';
 import { DatabaseModule } from '@packages/db';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { DatabaseModule } from '@packages/db';
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     ExpenseModule,
+    CommentModule,
   ],
   controllers: [],
   providers: [AppResolver],
