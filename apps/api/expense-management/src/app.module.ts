@@ -2,15 +2,10 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DBConn } from './db.conn';
 import { GraphQLModule } from '@nestjs/graphql';
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { AppResolver } from './app.resolver';
-import { ExpenseEntity } from './expense/entity/expense.entity';
-import { ExpenseDto } from './expense/dto/expense.dto';
-import { CreateExpenseDto } from './expense/dto/create-expense.dto';
-import { UpdateExpenseDto } from './expense/dto/update-expense.dto';
+import { ExpenseModule } from './expense/expense.module';
 
 @Module({
   imports: [
@@ -30,22 +25,7 @@ import { UpdateExpenseDto } from './expense/dto/update-expense.dto';
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
-    NestjsQueryGraphQLModule.forFeature({
-      imports: [NestjsQueryTypeOrmModule.forFeature([ExpenseEntity])],
-      services: [],
-      resolvers: [
-        {
-          DTOClass: ExpenseDto,
-          EntityClass: ExpenseEntity,
-          CreateDTOClass: CreateExpenseDto,
-          UpdateDTOClass: UpdateExpenseDto,
-          enableTotalCount: true,
-          create: { disabled: false },
-          update: { disabled: false },
-          delete: { disabled: true },
-        },
-      ],
-    }),
+    ExpenseModule,
   ],
   controllers: [],
   providers: [AppResolver],
