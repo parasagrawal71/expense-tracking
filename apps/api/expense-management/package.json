@@ -31,6 +31,7 @@
     "@nestjs/graphql": "^13.0.3",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/schedule": "5.0.1",
     "@nestjs/typeorm": "^11.0.0",
     "@packages/common": "workspace:^",
     "@ptc-org/nestjs-query-core": "^9.0.2",

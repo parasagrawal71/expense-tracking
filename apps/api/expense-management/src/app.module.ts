@@ -8,6 +8,7 @@ import { AppResolver } from './app.resolver';
 import { ExpenseModule } from './expense/expense.module';
 import { DatabaseModule } from '@packages/db';
 import { CommentModule } from './comment/comment.module';
+import { JobModule } from './jobs/job.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { CommentModule } from './comment/comment.module';
     }),
     ExpenseModule,
     CommentModule,
+    JobModule,
   ],
   controllers: [],
   providers: [AppResolver],
